@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Product;
+use Illuminate\Support\Facades\DB;
 
 class DashboardController extends Controller
 {
@@ -14,7 +17,13 @@ class DashboardController extends Controller
      */
     public function __invoke(Request $request)
     {
-        
-        return view('admin.dashboard');
+        $users= count(User::all());
+        $products = count(Product::all());
+        return view('admin.dashboard',[
+            'users' => $users,
+            'products' => $products,
+        ]
+
+        );
     }
 }

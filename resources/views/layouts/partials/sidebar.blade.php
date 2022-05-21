@@ -77,9 +77,9 @@
                     </a>
                   </li>
                   <li class="nav-item">
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('logout') }}">
                     @csrf
-                      <a href="#" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">
+                      <a href="{{route('logout')}}" onclick="event.preventDefault(); this.closest('form').submit();" class="nav-link">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                           Logout
